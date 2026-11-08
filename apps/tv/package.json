@@ -1,0 +1,24 @@
+{
+  "name": "@curato/tv",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "preact": "10.25.0"
+  },
+  "devDependencies": {
+    "@curato/core": "workspace:*",
+    "@preact/preset-vite": "2.9.1",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "vitest": "2.1.8",
+    "jsdom": "25.0.1"
+  }
+}

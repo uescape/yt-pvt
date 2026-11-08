@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Samsung Smart TV (Tizen) package config.
+  `pnpm package:tizen` copies this into platforms/out/tizen with your app host filled in.
+  The 10-character package id below must be replaced with the one Samsung Seller Office assigns you.
+-->
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://__APP_HOST__/tizen" version="0.1.0" viewmodes="maximized">
+    <tizen:application id="CuratoTV01.Curato" package="CuratoTV01" required_version="4.0"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <icon src="icon.png"/>
+    <name>Curato</name>
+    <tizen:profile name="tv-samsung"/>
+
+    <access origin="https://__APP_HOST__" subdomains="true"/>
+    <access origin="https://www.youtube.com" subdomains="true"/>
+    <access origin="https://www.youtube-nocookie.com" subdomains="true"/>
+    <access origin="https://i.ytimg.com" subdomains="true"/>
+    <access origin="https://yt3.ggpht.com" subdomains="true"/>
+    <access origin="https://sponsor.ajay.app" subdomains="false"/>
+    <tizen:allow-navigation>__APP_HOST__</tizen:allow-navigation>
+
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+
+    <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>

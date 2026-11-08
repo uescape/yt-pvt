@@ -1,0 +1,26 @@
+node_modules/
+dist/
+build/
+.wrangler/
+.dev.vars
+*.log
+.DS_Store
+
+# Expo / React Native
+apps/mobile/.expo/
+apps/mobile/ios/
+apps/mobile/android/
+apps/mobile/web-build/
+
+# Android TV shell
+platforms/android-tv/.gradle/
+platforms/android-tv/build/
+platforms/android-tv/app/build/
+platforms/android-tv/local.properties
+*.keystore
+*.jks
+
+# Platform packages
+platforms/out/
+*.wgt
+*.ipk

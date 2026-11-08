@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Curato",
+    "slug": "curato",
+    "scheme": "curato",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0b0d12"
+    },
+    "ios": {
+      "bundleIdentifier": "com.curato.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.curato.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0b0d12"
+      }
+    },
+    "plugins": ["expo-router", "expo-secure-store", "expo-localization"],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "apiBaseUrl": "https://curato.example.com"
+    }
+  }
+}

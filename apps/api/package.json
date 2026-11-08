@@ -1,0 +1,26 @@
+{
+  "name": "@curato/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "pnpm --filter @curato/tv build && wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply curato --local",
+    "db:migrate:remote": "wrangler d1 migrations apply curato --remote",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@curato/core": "workspace:*",
+    "hono": "4.6.12",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20241205.0",
+    "typescript": "5.6.3",
+    "vitest": "2.1.8",
+    "wrangler": "3.95.0"
+  }
+}
