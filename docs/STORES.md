@@ -1,6 +1,6 @@
 # Publishing to the TV and phone stores
 
-All TV packages open the hosted TV app at your Worker's URL (`https://tv.yourdomain.com/`). Deploy the API first (see the README), then build each package.
+All TV apps open the hosted TV app at your Worker's URL (`https://tv.yourdomain.com/`). Deploy the API first (see the README), then build each package.
 
 ## Samsung Smart TV (Tizen): Samsung Apps TV
 
@@ -40,6 +40,16 @@ Supported: 2018+ TVs (Tizen 4.0+).
 5. Submit the `.ipk` with icons (80×80, 130×130), a 1920×1080 background and screenshots. LG runs a QA review that includes the Back key: it must exit from the first screen, which Curato does.
 
 Supported: 2018+ TVs (webOS 4.0+).
+
+## Hisense and Toshiba (VIDAA): VIDAA Store
+
+VIDAA apps are hosted HTML5 apps: you give VIDAA the URL of your app, not a package file. The Curato TV app already works this way, so there's nothing to build. Submit `https://tv.yourdomain.com/?platform=vidaa`.
+
+1. **Test on your own TV first.** Open the TV's built-in **Browser** app (on most VIDAA models: Home → Apps → Browser) and go to `https://tv.yourdomain.com/?platform=vidaa`. Check pairing, D-pad navigation, the Back key and video playback. Behaviour in the browser is close to, but not exactly the same as, a store-installed app.
+2. **Apply to the VIDAA partner program.** VIDAA's store is not open self-service like Google Play. Apply through VIDAA's partner/developer contact on vidaa.com and expect a business review. Check vidaa.com for the current process; it changes.
+3. Once accepted, VIDAA gives you the app submission requirements: icon sizes, a hosted URL and a certification test pass on their devices. Curato already exits on Back from its first screen and supports the standard media keys, which TV certifications usually check.
+
+Supported: VIDAA U4 and newer. Older VIDAA browser engines are untested.
 
 ## Android TV and Google TV: Google Play
 

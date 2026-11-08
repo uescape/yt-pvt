@@ -1,6 +1,6 @@
-/* Platform adapters: Samsung Tizen, LG webOS, Android TV / Google TV / Fire TV (via our WebView shell), desktop browser. */
+/* Platform adapters: Samsung Tizen, LG webOS, Hisense/Toshiba VIDAA, Android TV / Google TV / Fire TV (via our WebView shell), desktop browser. */
 
-export type PlatformId = 'tizen' | 'webos' | 'androidtv' | 'firetv' | 'browser';
+export type PlatformId = 'tizen' | 'webos' | 'vidaa' | 'androidtv' | 'firetv' | 'browser';
 
 interface TizenApi {
   application?: { getCurrentApplication(): { exit(): void } };
@@ -32,12 +32,14 @@ function queryPlatform(): string | null {
 
 export function detectPlatform(): PlatformId {
   const q = queryPlatform();
-  if (q === 'tizen' || q === 'webos' || q === 'androidtv' || q === 'firetv' || q === 'browser') return q;
+  if (q === 'tizen' || q === 'webos' || q === 'vidaa' || q === 'androidtv' || q === 'firetv' || q === 'browser') return q;
   if (window.CuratoNative) {
     const p = window.CuratoNative.platform();
     return p === 'firetv' ? 'firetv' : 'androidtv';
   }
   if (window.tizen || /Tizen/i.test(navigator.userAgent)) return 'tizen';
+  // VIDAA (Hisense, some Toshiba) runs hosted HTML5 apps in its Chromium-based browser engine.
+  if (/VIDAA|Hisense/i.test(navigator.userAgent)) return 'vidaa';
   if (window.webOS || window.PalmSystem || /Web0S|webOS/i.test(navigator.userAgent)) return 'webos';
   return 'browser';
 }
@@ -47,7 +49,7 @@ export const platform: PlatformId = detectPlatform();
 export const isTv = platform !== 'browser';
 
 export function platformLabel(p: PlatformId = platform): string {
-  return { tizen: 'Samsung TV', webos: 'LG TV', androidtv: 'Android TV', firetv: 'Fire TV', browser: 'Web browser' }[p];
+  return { tizen: 'Samsung TV', webos: 'LG TV', vidaa: 'Hisense TV', androidtv: 'Android TV', firetv: 'Fire TV', browser: 'Web browser' }[p];
 }
 
 export function deviceName(): string {

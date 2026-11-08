@@ -6,7 +6,7 @@ import { api, ApiError, getToken, setToken } from '../src/api';
 import { Avatar, Button, ErrorText, Loading, Muted, RowItem, Section, useColors } from '../src/ui';
 
 function platformName(p: string) {
-  return { tizen: 'Samsung TV', webos: 'LG TV', androidtv: 'Android TV', firetv: 'Fire TV', browser: 'Browser' }[p] ?? 'TV';
+  return { tizen: 'Samsung TV', webos: 'LG TV', vidaa: 'Hisense TV', androidtv: 'Android TV', firetv: 'Fire TV', browser: 'Browser' }[p] ?? 'TV';
 }
 
 function lastSeen(iso: string | null) {

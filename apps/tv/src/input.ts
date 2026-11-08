@@ -56,6 +56,7 @@ export function toKey(e: KeyboardEvent): Key | null {
     case 10009: // Tizen Back
     case 461: // webOS Back
     case 27:
+    case 8: // Hisense VIDAA Back (reported as Backspace)
       return 'back';
     case 10252: // Tizen MediaPlayPause
     case 179:

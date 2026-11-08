@@ -19,6 +19,7 @@ describe('remote key mapping', () => {
     expect(toKey(ev({ key: 'Unidentified', keyCode: 10009 }))).toBe('back'); // Samsung
     expect(toKey(ev({ key: 'Unidentified', keyCode: 461 }))).toBe('back'); // LG
     expect(toKey(ev({ key: 'GoBack' }))).toBe('back');
+    expect(toKey(ev({ key: 'Unidentified', keyCode: 8 }))).toBe('back'); // Hisense VIDAA
   });
   it('maps media keys by keyCode', () => {
     expect(toKey(ev({ key: 'Unidentified', keyCode: 417 }))).toBe('ff');

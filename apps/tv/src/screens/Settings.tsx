@@ -8,6 +8,7 @@ import { platform, platformLabel } from '../platform';
 const LOCK_TIPS: Record<string, string> = {
   tizen: 'Samsung: Settings → General → Smart Features → Apps → Lock/Unlock the YouTube app with a PIN.',
   webos: 'LG: Settings → General → Safety (or Parental Controls) → Application Locks → lock YouTube.',
+  vidaa: 'Hisense (VIDAA): Settings → System → Parental Control → turn it on, then lock or hide the YouTube app (menu names vary by model).',
   androidtv: 'Google TV: create a Kids profile in the system settings, or disable YouTube under Settings → Apps.',
   firetv: 'Fire TV: Settings → Preferences → Parental Controls → turn on, then lock or hide the YouTube app.',
   browser: 'On TVs, lock or hide the built-in YouTube app with the TV’s parental controls.',

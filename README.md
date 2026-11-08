@@ -18,6 +18,7 @@ Videos play in YouTube's **official embedded player, ads included**. Curato does
 | --- | --- | --- |
 | Samsung TVs (Tizen) | TV app | `apps/tv` + `platforms/tizen` |
 | LG TVs (webOS) | TV app | `apps/tv` + `platforms/webos` |
+| Hisense / Toshiba TVs (VIDAA) | TV app (hosted URL, no package) | `apps/tv` |
 | Android TV, Google TV, Fire TV | TV app | `apps/tv` + `platforms/android-tv` |
 | iPhone and Android phones | Parent app | `apps/mobile` (Expo) |
 | Cloud | API, YouTube cache, filtering | `apps/api` (Cloudflare Workers + D1) |
@@ -119,6 +120,7 @@ Point a domain at the Worker (e.g. `tv.yourdomain.com`). Then:
 
 - Phone app: set `extra.apiBaseUrl` in `apps/mobile/app.json`.
 - Android TV: set `curatoAppUrl` in `platforms/android-tv/gradle.properties`.
+- Hisense (VIDAA): submit `https://tv.yourdomain.com/?platform=vidaa`; before that, test it in the TV's Browser app.
 - Samsung and LG: `CURATO_APP_URL=https://tv.yourdomain.com/ pnpm package:tizen` (or `package:webos`).
 
 Store submission for every platform is in [docs/STORES.md](docs/STORES.md).
